@@ -37,36 +37,37 @@ public class IsTreeBinary {
 	}
 	
 	
-	// ************************************** TEST CASES IN PURPOSEFULLY WRITTEN IN THE SAME CLASS  ********************************* // 
+	// ************************************** TEST CASES IN PURPOSEFULLY WRITTEN IN THE SAME CLASS  ********************************* //
+	
 	@Test
-	public void checkwithNonBinaryTree(){
+	public void checkBinary_nonBinaryTree_false(){
 
 		BinaryNode root=BinaryNode.createSmallTree();
 		Assert.assertEquals(false,checkBinary(root));
 	}
 
 	@Test
-	public void checkBinaryTree(){
+	public void checkBinary_binaryTree_true(){
 		BinaryNode root=BinaryNode.createSmallBST();
 		Assert.assertEquals(true,checkBinary(root));
 	}
 
 	@Test
-	public void checkNull()
+	public void checkBinary_nullTree_true()
 	{
 		BinaryNode root=null;
 		Assert.assertNotEquals(false,checkBinary(root));
 	}
 	
 	@Test
-	public void checkSingleNode()
+	public void checkBinary_singleNode_true()
 	{
 		BinaryNode root=new BinaryNode(10,null,null);
 		Assert.assertEquals(true,checkBinary(root));
 	}
 	
 	@Test
-	public void verySmallNonBST()
+	public void checkBinary_smallNonBinary_false()
 	{
 		/*
 		 * 			10
@@ -81,7 +82,7 @@ public class IsTreeBinary {
 
 	
 	@Test
-	public void verySmallBST()
+	public void checkBinary_smallBinary_true()
 	{
 		/*
 		 * 			8
@@ -95,7 +96,7 @@ public class IsTreeBinary {
 	}
 
 	@Test
-	public void LeftSkewedBST()
+	public void checkBinary_LeftSkewedBST_true()
 	{
 		/*
 		 * 			10
@@ -109,7 +110,7 @@ public class IsTreeBinary {
 	}
 	
 	@Test
-	public void LeftSkewedNonBST()
+	public void checkBinary_LeftSkewedNonBST_false()
 	{
 		/*
 		 * 			10
@@ -123,7 +124,7 @@ public class IsTreeBinary {
 	}
 	
 	@Test
-	public void RightSkewedBST()
+	public void checkBinary_RightSkewedBST_true()
 	{
 		/*
 		 * 			5
@@ -138,7 +139,7 @@ public class IsTreeBinary {
 	}
 	
 	@Test
-	public void RightSkewedNonBST()
+	public void checkBinary_RightSkewedNonBST_false()
 	{
 		/*
 		 * 			8
@@ -150,5 +151,4 @@ public class IsTreeBinary {
 		BinaryNode root=new BinaryNode(8,null,n2);
 		Assert.assertEquals(false,checkBinary(root));
 	}
-
 }
