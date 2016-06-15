@@ -1,4 +1,4 @@
-package practicePrograms;
+package practicePrograms.practicePrograms;
 
 public class BinaryNode {
 

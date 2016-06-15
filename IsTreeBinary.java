@@ -1,4 +1,4 @@
-package practicePrograms;
+package practicePrograms.practicePrograms;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -43,27 +43,27 @@ public class IsTreeBinary {
 	public void checkBinary_nonBinaryTree_false(){
 
 		BinaryNode root=BinaryNode.createSmallTree();
-		Assert.assertEquals(false,checkBinary(root));
+		Assert.assertFalse(checkBinary(root));
 	}
 
 	@Test
 	public void checkBinary_binaryTree_true(){
 		BinaryNode root=BinaryNode.createSmallBST();
-		Assert.assertEquals(true,checkBinary(root));
+		Assert.assertTrue(checkBinary(root));
 	}
 
 	@Test
 	public void checkBinary_nullTree_true()
 	{
 		BinaryNode root=null;
-		Assert.assertNotEquals(false,checkBinary(root));
+		Assert.assertTrue(checkBinary(root));
 	}
 	
 	@Test
 	public void checkBinary_singleNode_true()
 	{
 		BinaryNode root=new BinaryNode(10,null,null);
-		Assert.assertEquals(true,checkBinary(root));
+		Assert.assertTrue(checkBinary(root));
 	}
 	
 	@Test
@@ -77,7 +77,7 @@ public class IsTreeBinary {
 		BinaryNode n2=new BinaryNode(5, null, null);
 		
 		BinaryNode root=new BinaryNode(10,n2,n1);
-		Assert.assertEquals(false,checkBinary(root));
+		Assert.assertFalse(checkBinary(root));
 	}
 
 	
@@ -92,7 +92,7 @@ public class IsTreeBinary {
 		BinaryNode n2=new BinaryNode(5, null, null);
 		
 		BinaryNode root=new BinaryNode(8,n2,n1);
-		Assert.assertEquals(true,checkBinary(root));
+		Assert.assertTrue(checkBinary(root));
 	}
 
 	@Test
@@ -106,7 +106,7 @@ public class IsTreeBinary {
 		BinaryNode n1=new BinaryNode(5,null,null);
 		BinaryNode n2=new BinaryNode(8,n1, null);		
 		BinaryNode root=new BinaryNode(10,n2,null);
-		Assert.assertEquals(true,checkBinary(root));
+		Assert.assertTrue(checkBinary(root));
 	}
 	
 	@Test
@@ -120,7 +120,7 @@ public class IsTreeBinary {
 		BinaryNode n2=new BinaryNode(8,null, null);		
 		BinaryNode n1=new BinaryNode(5,n2,null);
 		BinaryNode root=new BinaryNode(10,n1,null);
-		Assert.assertEquals(false,checkBinary(root));
+		Assert.assertFalse(checkBinary(root));
 	}
 	
 	@Test
@@ -135,7 +135,7 @@ public class IsTreeBinary {
 		BinaryNode n1=new BinaryNode(10,null,null);
 		BinaryNode n2=new BinaryNode(8,null,n1);		
 		BinaryNode root=new BinaryNode(5,null,n2);
-		Assert.assertEquals(true,checkBinary(root));
+		Assert.assertTrue(checkBinary(root));
 	}
 	
 	@Test
@@ -149,6 +149,6 @@ public class IsTreeBinary {
 		BinaryNode n1=new BinaryNode(5,null,null);
 		BinaryNode n2=new BinaryNode(10,null,n1);		
 		BinaryNode root=new BinaryNode(8,null,n2);
-		Assert.assertEquals(false,checkBinary(root));
+		Assert.assertFalse(checkBinary(root));
 	}
 }
