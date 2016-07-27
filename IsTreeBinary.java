@@ -30,10 +30,19 @@ public class IsTreeBinary {
 
 		if(node==null)
 			return true;
+		
+		
+		//Handling the cases for INT_MIN and INT_MAX
+		if(node.data==INTEGER.MIN_VALUE && node.left!=null)
+			return false;
+
+		if(node.data==INTEGER.MAX_VALUE && node.right!=null)
+			return false;
+			
 		else if ( node.data < minValue || node.data > maxValue)
 			return false;
 		else
-			return isTreeBinary(node.left,minValue,node.data) && isTreeBinary(node.right,node.data,maxValue); 
+			return isTreeBinary(node.left,minValue,node.data-1) && isTreeBinary(node.right,node.data+1,maxValue); 
 	}
 	
 	
@@ -45,6 +54,7 @@ public class IsTreeBinary {
 		BinaryNode root=BinaryNode.createSmallTree();
 		Assert.assertFalse(checkBinary(root));
 	}
+
 
 	@Test
 	public void checkBinary_binaryTree_true(){
